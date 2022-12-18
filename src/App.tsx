@@ -30,18 +30,22 @@ function App() {
   };
 
   return (
-    <div className="flex">
-      <div className="w-1/2 p-4">
-        <textarea onChange={handleChange} value={markdown} className="w-full h-full p-4 rounded-lg" />
+    <div className="flex justify-center flex-col">
+      <div className="flex justify-center">
+        <div className="w-1/2 p-4">
+          <textarea onChange={handleChange} value={markdown} className="w-full h-full p-4 rounded-lg" />
+        </div>
+        <div className="w-1/2 p-4">
+          <div className="card w-96 bg-base-100 shadow-xl">
+            <ReactMarkdown children={markdown} className="w-full h-full p-4 rounded-lg" />
+          </div>
+        </div>
       </div>
-      <div className="w-1/2 p-4">
-        <ReactMarkdown children={markdown} className="w-full h-full p-4 rounded-lg" />
-      </div>
-      <div className="absolute bottom-0 right-0 p-4">
-        <button onClick={handleDownloadMarkdown} className="px-4 py-2 rounded-lg bg-blue-500 text-white">
+      <div className="flex justify-center bottom-0 right-0 p-4 gap-8">
+        <button onClick={handleDownloadMarkdown} className="btn btn-outline btn-info">
           Download Markdown
         </button>
-        <button onClick={handleDownloadPDF} className="px-4 py-2 rounded-lg bg-blue-500 text-white ml-4">
+        <button onClick={handleDownloadPDF} className="btn btn-outline btn-info">
           Download PDF
         </button>
       </div>
