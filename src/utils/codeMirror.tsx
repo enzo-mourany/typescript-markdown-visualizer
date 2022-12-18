@@ -1,0 +1,11 @@
+import { useEffect, useState, useRef } from "react";
+import { EditorState } from '@codemirror/state';
+import { EditorView, keymap, highlightActiveLine } from '@codemirror/view';
+import { defaultKeymap } from '@codemirror/commands';
+import { history, historyKeymap } from '@codemirror/history';
+import { indentOnInput } from '@codemirror/language';
+import { lineNumbers, highlightActiveLineGutter } from '@codemirror/gutter';
+import { bracketMatching } from '@codemirror/matchbrackets';
+import { defaultHighlightStyle } from '@codemirror/highlight';
+import { javascript } from '@codemirror/lang-javascript';
+import type React from 'react';
