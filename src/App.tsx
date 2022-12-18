@@ -30,14 +30,22 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center flex-col">
-      <div className="flex justify-center">
+    <div className="flex justify-center items-center flex-col w-screen h-screen">
+      <div className="flex justify-center w-11/12 h-5/6">
         <div className="w-1/2 p-4">
           <textarea onChange={handleChange} value={markdown} className="w-full h-full p-4 rounded-lg" />
         </div>
-        <div className="w-1/2 p-4">
-          <div className="card w-96 bg-base-100 shadow-xl">
-            <ReactMarkdown children={markdown} className="w-full h-full p-4 rounded-lg" />
+        <div className="w-1/2 p-4 h-full">
+          <div className="card bg-base-100 shadow-xl h-full">
+            <ReactMarkdown
+              children={markdown}
+              className="w-full h-full p-4 rounded-lg h-full"
+              components={{
+                h1: ({node, ...props}) => <h1 style={{color: 'red'}} {...props} />,
+                h2: ({node, ...props}) => <h2 style={{color: 'green'}} {...props} />,
+                p: ({node, ...props}) => <p style={{color: 'blue'}} {...props} />
+              }}
+            />
           </div>
         </div>
       </div>
