@@ -1,37 +1,52 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Markdown from 'react-markdown';
+import './App.css';
+import ReactMarkdown from 'react-markdown';
 import { renderToString } from 'react-dom/server';
 import { pdf } from '@react-pdf/renderer';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [markdown, setMarkdown] = useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMarkdown(event.target.value);
+  };
+
+  const handleDownloadMarkdown = () => {
+    const element = document.createElement('a');
+    const file = new Blob([markdown], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = 'document.md';
+    document.body.appendChild(element);
+    element.click();
+  };
+
+  const handleDownloadPDF = async () => {
+    const element = document.createElement('a');
+    const file = await pdf(renderToString(<ReactMarkdown source={markdown} />)).toBlob();
+    element.href = URL.createObjectURL(file);
+    element.download = 'document.pdf';
+    document.body.appendChild(element);
+    element.click();
+  };
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="flex">
+      <div className="w-1/2 p-4">
+        <textarea onChange={handleChange} value={markdown} className="w-full h-full p-4 rounded-lg" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div className="w-1/2 p-4">
+        <ReactMarkdown children={markdown} className="w-full h-full p-4 rounded-lg" />
+      </div>
+      <div className="absolute bottom-0 right-0 p-4">
+        <button onClick={handleDownloadMarkdown} className="px-4 py-2 rounded-lg bg-blue-500 text-white">
+          Download Markdown
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <button onClick={handleDownloadPDF} className="px-4 py-2 rounded-lg bg-blue-500 text-white ml-4">
+          Download PDF
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
