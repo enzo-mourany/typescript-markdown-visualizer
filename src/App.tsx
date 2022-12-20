@@ -51,7 +51,6 @@ function App() {
                 p: ({node, ...props}) => <p style={{color: 'blue'}} {...props} />
               }}
             />
-            <Editor initialDoc={markdown} onChange={handleDocChange} />
           </div>
         </div>
       </div>

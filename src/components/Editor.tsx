@@ -23,7 +23,7 @@ const Editor: React.FC<Props> = (props) => {
     }
   }, [editorView]);
 
-  return <div ref={refContainer}>Editor</div>;
+  return <div ref={refContainer}></div>;
 };
 
 export default Editor;
