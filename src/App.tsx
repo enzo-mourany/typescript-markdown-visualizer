@@ -1,11 +1,16 @@
-import { useState } from 'react'
+import {SetStateAction, useCallback, useState} from 'react'
 import './App.css';
 import ReactMarkdown from 'react-markdown';
-import { renderToString } from 'react-dom/server';
-import { pdf } from '@react-pdf/renderer';
+import {renderToString} from 'react-dom/server';
+import {pdf} from '@react-pdf/renderer';
+import Editor from "./components/Editor";
 
 function App() {
-  const [markdown, setMarkdown] = useState('');
+  const [markdown, setMarkdown] = useState('# Welcome');
+
+  const handleDocChange = useCallback((newDoc: SetStateAction<string>) => {
+    setMarkdown(newDoc);
+  }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMarkdown(event.target.value);
@@ -46,6 +51,7 @@ function App() {
                 p: ({node, ...props}) => <p style={{color: 'blue'}} {...props} />
               }}
             />
+            <Editor initialDoc={markdown} onChange={handleDocChange} />
           </div>
         </div>
       </div>
