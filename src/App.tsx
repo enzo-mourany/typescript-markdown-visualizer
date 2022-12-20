@@ -3,7 +3,6 @@ import './App.css';
 import ReactMarkdown from 'react-markdown';
 import {renderToString} from 'react-dom/server';
 import {pdf} from '@react-pdf/renderer';
-import Editor from "./components/Editor";
 
 function App() {
   const [markdown, setMarkdown] = useState('# Welcome');
@@ -48,7 +47,6 @@ function App() {
               components={{
                 h1: ({node, ...props}) => <h1 style={{color: 'red'}} {...props} />,
                 h2: ({node, ...props}) => <h2 style={{color: 'green'}} {...props} />,
-                p: ({node, ...props}) => <p style={{color: 'blue'}} {...props} />
               }}
             />
           </div>
