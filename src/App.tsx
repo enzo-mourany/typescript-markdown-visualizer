@@ -43,11 +43,7 @@ function App() {
           <div className="card bg-base-100 shadow-xl h-full">
             <ReactMarkdown
               children={markdown}
-              className="w-full h-full p-4 rounded-lg h-full"
-              components={{
-                h1: ({node, ...props}) => <h1 style={{color: 'red'}} {...props} />,
-                h2: ({node, ...props}) => <h2 style={{color: 'green'}} {...props} />,
-              }}
+              className="prose md:prose-lg lg:prose-xl w-full h-full p-4 rounded-lg h-full"
             />
           </div>
         </div>
