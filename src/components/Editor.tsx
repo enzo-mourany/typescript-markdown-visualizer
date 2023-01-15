@@ -19,7 +19,7 @@ const Editor: React.FC<Props> = (props) => {
 
   useEffect(() => {
     if (editorView) {
-
+      editorView.focus();
     }
   }, [editorView]);
 
