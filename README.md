@@ -110,6 +110,31 @@ Don't forget to give the project a star! Thanks again!
 
 
 
+<!-- CONTACT -->
+## Contact
+
+Enzo Mourany - [@vincenzomry](https://twitter.com/vincenzomry) - [Linkedin](https://www.linkedin.com/in/enzo-mourany) - enzo.mourany@outlook.com
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## Acknowledgements
+
+* [Vite](https://vitejs.dev/)
+* react-markdown       
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## Support
+
+Give a ⭐️ if this project helped you!
+
 
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
