@@ -3,8 +3,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -164,16 +162,16 @@ Give a ⭐️ if this project helped you!
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/enzo-mourany/typescript-markdown-visualizer.svg?style=for-the-badge
 [contributors-url]: https://github.com/enzo-mourany/typescript-markdown-visualizer/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/enzo-mourany/typescript-markdown-visualizer.svg?style=for-the-badge
 [forks-url]: https://github.com/enzo-mourany/typescript-markdown-visualizer/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/enzo-mourany/typescript-markdown-visualizer.svg?style=for-the-badge
 [stars-url]: https://github.com/enzo-mourany/typescript-markdown-visualizer/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/enzo-mourany/typescript-markdown-visualizer?style=for-the-badge
 [issues-url]: https://github.com/enzo-mourany/typescript-markdown-visualizer/issues
 
 <!-- Techs URLs -->
